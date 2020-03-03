@@ -10,7 +10,7 @@ $( document ).ready(function (){
         if(data){
             for (item of data){
                 keywords.push(item);
-                popKeysDiv.append(`<label>${item.word}</label>`);
+                popKeysDiv.append(`<label class="keywordLabel">${item.word}</label>`);
             }
         }else{
             console.log('No keywords!');
@@ -56,7 +56,11 @@ $( document ).ready(function (){
 
     }
 
+    function click(){
+        alert('clicked!');
+    }
     serachBtn.on('click',getReviewsForSearch);
+    popKeysDiv.on('click',click);
 
 });
 

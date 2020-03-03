@@ -95,3 +95,17 @@ footer{
   width: 16%;
 }
 
+.keywordLabel{
+    background-color: #6f9db4;
+    border-radius: 10px;
+    margin: 10px 10px 10px 10px;
+    padding: 5px;
+}
+
+.keywordLabel:hover{
+    background-color: #1d7cac;
+}
+
+#searchQTxt{
+    margin: 10px;
+}

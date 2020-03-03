@@ -5,7 +5,7 @@ const MongoClient = require('mongodb').MongoClient;
 const mongoURL = require('./url');
 
 //This is modelName arrays so people wont add stuff outside the scope off arrays
-var modelsArray = ['guns','devModels','emails','keywords'];
+var modelsArray = ['guns','devModels','emails','keywords','reviews'];
 
 //-- Writing to DB function: needs data in form of JS object and <modelName>
 function writeItem(data,modelName) {

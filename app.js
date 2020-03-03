@@ -74,6 +74,35 @@ app.get('/api/editGun',(req,res)=>{
 
 // --- mariam endpoints --
 
+// --- Aditi endpoints ---
+app.get('/api/getReviews',(req,res)=>{
+    // var action = parseInt(req.query.mode);
+    // dao.editItem({regNo:`${req.query.regNo}`},{status:action},'guns');
+    // res.redirect('../interactive-demo.html');
+});
+
+// --- End Aditi endpoints
+
+// --- malhar end points ---
+app.post('/api/addReview',(req,res)=>{
+
+
+  var today = new Date();
+  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  var review = {
+    author : req.body.author,
+    review : req.body.review,
+    datePosted : date,
+  }
+
+  console.log(review);
+  dao.writeItem(review,'reviews');
+
+    res.redirect('../reviews.html');
+});
+
+// --- end malhar endpoints
+
 //Adding email to our newsletter
 app.post('/api/addEmail',(req,res)=>{
   var userEmailId = req.body.user_email;

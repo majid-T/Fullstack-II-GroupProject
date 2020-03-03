@@ -76,7 +76,43 @@ app.get('/api/editGun',(req,res)=>{
 
 // --- Aditi endpoints ---
 app.get('/api/getReviews',(req,res)=>{
-    // var action = parseInt(req.query.mode);
+    function getAllReviews(err, data) {
+        if (data) {
+            res.json(data);
+        } else {
+            console.log(err);
+            next(err);
+        };
+  }
+  dao.readItem(getAllReviews,'reviews');
+});
+
+app.get('/api/getKeywords',(req,res)=>{
+    function getAllKeyWords(err, data) {
+        if (data) {
+            res.json(data);
+        } else {
+            console.log(err);
+            next(err);
+        };
+  }
+  dao.readItem(getAllKeyWords,'keywords');
+});
+
+app.get('/api/addKeyword',(req,res)=>{
+  // function getAllReviews(err, data) {
+  //         if (data) {
+  //             res.json(data);
+  //         } else {
+  //             console.log(err);
+  //             next(err);
+  //         };
+  //   }
+  // dao.readItem(getAllReviews,'reviews');
+  //   var allKeyword = dao.
+  //   var keyword = req.query.keyword;
+  //   var count = parseInt(req.query.count);
+  //   console.log(keyword + ' ' + count);
     // dao.editItem({regNo:`${req.query.regNo}`},{status:action},'guns');
     // res.redirect('../interactive-demo.html');
 });
@@ -85,8 +121,6 @@ app.get('/api/getReviews',(req,res)=>{
 
 // --- malhar end points ---
 app.post('/api/addReview',(req,res)=>{
-
-
   var today = new Date();
   var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
   var review = {

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="styles/CATest.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="scripts/demo.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodexArma Revenue Streams</title>
+</head>
+<body>
+    <div class = "navbar">
+        <a href="index.html">Main Page </a>
+        <a href="CodexArmastakeholders.html">Stakeholders</a>
+        <a href="Consensus_Mechanism.html">Consensus Mechanism </a>
+        <a href="Revenue_Streams.html">Revenue Streams </a>
+        <a href="flowchart-processA.html">Process Diagram A</a>
+        <a href="flowchart-processB.html">Process Diagram B</a>
+        <a href="interactive-demo.html">Demo process</a>
+    </div>
+    <div id="mainContainer">
+        <div class='interactiveDemo'>
+            <h1>Demo of what will happen in the blockchain.</h1>
+            <form class='Manufacturer' action="/api/gunReg" method="post">
+                <fieldset>
+                    <legend>Manufacturer</legend>
+                    <select id="manf" name="manf">
+                        <option value="A & A">A & A gun making</option>
+                        <option value="B & sons">B and sons Firearms</option>
+                        <option value="Center target">Center Target</option>
+                        <option value=zone>Zone</option>
+                    </select>
+                    <input type="text" name="gunRegNo" placeholder="gun registry number" pattern="[A-Za-z0-9]+" required>
+                    <input type="text" name="gunSpecA" placeholder="gun specification A" required>
+                    <input type="text" name="gunSpecB" placeholder="gun specification B" required>
+                    <input type="date" name="dateBuilt" min="2019-07-01" max="2020-12-31">
+                    <input type="submit" name="req" >
+                </fieldset>
+            </form>
+
+            <h2>Government table and actions</h2>
+            <div class="gunsTable">
+                <table id="govTable" class="govTable"></table>
+            </div>
+
+            <h2>Manufacturer table and actions</h2>
+            <div class="gunsTable">
+                <table id="manTable" class="manTable"></table>
+            </div>
+
+            <h2>Distributers table and actions</h2>
+            <div class="gunsTable">
+                <table id="distTable" class="distTable"></table>
+            </div>
+
+            <h2>Vendor table and actions</h2>
+            <div class="gunsTable">
+                <table id="vendTable" class="vendTable"></table>
+            </div>
+
+            <h2>Customer table and actions</h2>
+            <div class="gunsTable">
+                <table id="custTable" class="custTable"></table>
+            </div>
+
+           <h2>Disposal Firm table and actions</h2>
+            <div class="gunsTable">
+                <table id="dispTable" class="dispTable"></table>
+            </div>
+
+        </main>
+    </div>
+    <footer>
+        All logos by LogoMakr.com. <br>
+        Student project for Majid Shockoohi & Malhar Dave.
+    </footer>
+</body>
+</html>

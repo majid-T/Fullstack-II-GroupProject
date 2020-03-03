@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="styles/CATest.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="scripts/demo.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodexArma Revenue Streams</title>
+</head>
+<body>
+    <div class = "navbar">
+        <a href="index.html">Main Page </a>
+        <a href="CodexArmastakeholders.html">Stakeholders</a>
+        <a href="Consensus_Mechanism.html">Consensus Mechanism </a>
+        <a href="Revenue_Streams.html">Revenue Streams </a>
+        <a href="flowchart-processA.html">Process Diagram A</a>
+        <a href="flowchart-processB.html">Process Diagram B</a>
+        <a href="interactive-demo.html">Demo process</a>
+    </div>
+    <div id="mainContainer">
+        <div class='interactiveDemo'>
+            <h1>Demo of what will happen in the blockchain.</h1>
+            <form>
+                <fieldset>
+                    <legend>Government</legend>
+                </fieldset>
+            </form>
+            <div class="gunsTable">
+                <table id="govTable" class="govTable"></table>
+            </div>
+
+            <form class='Manufacturer' action="/api/gunReg" method="post">
+                <fieldset>
+                    <legend>Manufacturer</legend>
+                    <select id="manf" name="manf">
+                        <option value=manfA>Manufacturer AAA</option>
+                        <option value=manfB>Manufacturer BBB</option>
+                        <option value=manfC>Manufacturer CCC</option>
+                        <option value=manfD>Manufacturer DDD</option>
+                    </select>
+                    <input type="text" name="gunRegNo" min='1' max='2' placeholder="gun registry number" required>
+                    <input type="text" name="gunSpecA" min='1' max='2' placeholder="gun specification A" required>
+                    <input type="text" name="gunSpecB" min='1' max='2' placeholder="gun specification B" required>
+                    <input type="date" name="dateBuilt" >
+                    <input type="submit" name="req" >
+                </fieldset>
+            </form>
+            <div class="gunsTable">
+                <table id="manTable" class="manTable"></table>
+            </div>
+
+            <form class='distributer' action="#" method="post">
+                <fieldset>
+                    <legend>Distributer</legend>
+                    <input type="text" name="somthing" min='1' max='2' placeholder="somthing" required>
+                    <input type="submit" name="req" >
+                </fieldset>
+            </form>
+            <div class="gunsTable">
+                <table id="distTable" class="distTable"></table>
+            </div>
+
+            <form class='customer' action="#" method="post">
+                <fieldset>
+                    <legend>Customer</legend>
+                    <input type="text" name="somthing" min='1' max='2' placeholder="somthing" required>
+                    <input type="submit" name="req" >
+                </fieldset>
+            </form>
+
+            <table id="custTable" class="custTable"></table>
+            <div class="gunsTable">
+                <table id="distTable" class="distTable"></table>
+            </div>
+            <form class='vendor' action="#" method="post">
+                <fieldset>
+                    <legend>Vendor</legend>
+                    <input type="text" name="somthing" min='1' max='2' placeholder="somthing" required>
+                    <input type="submit" name="req" >
+                </fieldset>
+            </form>
+            <table id="vendTable" class="vendTable"></table>
+
+            <form class='disposal' action="#" method="post">
+                <fieldset>
+                    <legend>Disposal Firm</legend>
+                    <input type="text" name="somthing" min='1' max='2' placeholder="somthing" required>
+                    <input type="submit" name="req" >
+                </fieldset>
+            </form>
+            <table id="dispTable" class="dispTable"></table>
+        </main>
+    </div>
+    <footer>
+        All logos by LogoMakr.com. <br>
+        Student project for Majid Shockoohi & Malhar Dave.
+    </footer>
+</body>
+</html>

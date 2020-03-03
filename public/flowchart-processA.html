@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="styles/CATest.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts/scriptA.js"></script>
+    <title>CodexArma</title>
+</head>
+<body>
+    <div class = "navbar">
+        <a href="index.html">Main Page </a>
+        <a href="CodexArmastakeholders.html">Stakeholders</a>
+        <a href="Consensus_Mechanism.html">Consensus Mechanism </a>
+        <a href="Revenue_Streams.html">Revenue Streams </a>
+        <a href="flowchart-processA.html">Process Diagram A</a>
+        <a href="flowchart-processB.html">Process Diagram B</a>
+        <a href="interactive-demo.html">Demo process</a>
+    </div>
+    <aside>
+        <h3>From Factory to Market</h3>
+        <ol>
+            <li>Manufacturer makes the guns and requests gun registration</li>
+            <li>Government registers the guns and commits the data</li>
+            <li>Manufacturer sends guns to distributer and requests status change</li>
+            <li>Government save the changes and commits the data</li>
+            <li>Guns are sold by distributer and request is sent to Government for changes</li>
+            <li>Government save the changes and commits the data</li>
+        </ol>
+        <br>
+        <br>
+        <h3>Individual permits /Background Checks</h3>
+        <ol>
+            <li>Users and clients request gun permits</li>
+            <li>Government performs background checks and issue permits and commits  </li>
+        </ol>
+    </aside>
+
+    <main>
+    <div class="container">
+    <h1>Proccess Diagram</h1>
+    <h2>From Factory to Market</h2>
+    <table class="animationTable">
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+                <img src="icons/block1ByLogoMakr.com.png" alt="block image" class="tableIconBG">
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <img src="icons/gunFactByLogoMakr.com.png" alt="factory image" class="tableIcon">
+
+            </td>
+            <td colspan="3">
+                <img src="icons/gunReqRegByLogoMakr.com.png" alt="gun request image" class="movingIcon position1" id="reqIcon1">
+            </td>
+            <td>
+                <img src="icons/govByLogoMakr.com.png" alt="government image" class="tableIcon">
+                <img src="icons/multiLangByLogoMakr.com.png" alt="smart contract image" class="tableIcon">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="icons/gunFactByLogoMakr.com.png" alt="factory image" class="tableIcon" >
+                <img src="icons/distByLogoMakr.com.png" alt="distributer image" class="tableIcon" >
+            </td>
+            <td colspan="3">
+                <img src="icons/gunsSoldByLogoMakr.com.png" alt="gun sold image" class="movingIcon position1" id="reqIcon2">
+            </td>
+            <td>
+                <img src="icons/govByLogoMakr.com.png" alt="government image" class="tableIcon">
+                <img src="icons/multiLangByLogoMakr.com.png" alt="smart contract image" class="tableIcon">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="icons/distByLogoMakr.com.png" alt="distributer image" class="tableIcon" >
+                <img src="icons/vendorByLogoMakr.com.png" alt="vendor image" class="tableIcon" >
+            </td>
+            <td colspan="3">
+                <img src="icons/distGunsSoldByLogoMakr.com.png" alt="gun sold image" class="movingIcon position1" id="reqIcon3">
+            </td>
+            <td>
+                <img src="icons/govByLogoMakr.com.png" alt="government image" class="tableIcon">
+                <img src="icons/multiLangByLogoMakr.com.png" alt="smart contract image" class="tableIcon">
+            </td>
+        </tr>
+        <tr>
+            <td><b>Steps:</b></td>
+            <td id='statusA1' colspan="4"></td>
+        </tr>
+    </table>
+    <hr>
+    <button onclick="regGun()" >Register Gun</button>
+    <button onclick="gunsSold()" >Sell to Disterbuter</button>
+    <button onclick="gunsSoldToShops()" >Sell to Shops</button>
+    <button onclick="resetA1()">Reset</button>
+<hr>
+<hr>
+    <h2>Individual permits /Background Checks</h2>
+    <table class="animationTable">
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+                <img src="icons/block1ByLogoMakr.com.png" alt="blockchain image" class="tableIconBG">
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <img src="icons/gunUserByLogoMakr.com.png" alt="gun user image" class="tableIcon">
+            </td>
+            <td colspan="3">
+                <img src="icons/userGunPermitByLogoMakr.com.png" alt="gun permit image" class="movingIcon position1" id="reqIcon4">
+            </td>
+            <td>
+                <img src="icons/govByLogoMakr.com.png" alt="government image" class="tableIcon">
+            </td>
+        </tr>
+        <tr>
+            <td><b>Steps:</b></td>
+            <td id='statusA2' colspan="4"></td>
+        </tr>
+    </table>
+    <hr>
+    <button onclick="gunPermitReq()">Request Gun Permit</button>
+    <button onclick="resetA2()">Reset</button>
+</div>
+    </main>
+    <footer>
+        All logos by LogoMakr.com. <br>
+        Student project for Majid Shockoohi & Malhar Dave.
+    </footer>
+</body>
+</html>

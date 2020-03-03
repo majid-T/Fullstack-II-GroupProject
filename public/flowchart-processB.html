@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="styles/CATest.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="scripts/scriptA.js"></script>
+    <title>CodexArma</title>
+</head>
+<body>
+    <div class = "navbar">
+        <a href="index.html">Main Page </a>
+        <a href="CodexArmastakeholders.html">Stakeholders</a>
+        <a href="Consensus_Mechanism.html">Consensus Mechanism </a>
+        <a href="Revenue_Streams.html">Revenue Streams </a>
+        <a href="flowchart-processA.html">Process Diagram A</a>
+        <a href="flowchart-processB.html">Process Diagram B</a>
+        <a href="interactive-demo.html">Demo process</a>
+    </div>
+    <aside>
+        <h3>In the Market</h3>
+        <ol>
+            <li>Users and clients try to purchase a gun from vendor</li>
+            <li>Vendor checks customer permits / Verify eligibility and request for status change</li>
+            <li>Government by smart contract save the changes and commits the data</li>
+            <li>Users and clients changing ownership through vendor</li>
+            <li>Vendor checks customer permits and request for status change</li>
+            <li>Government save the changes and commits the dataa</li>
+            <li>Users and clients deliver guns for disposal to government</li>
+            <li>Government takes the guns and save the changes and commits the data</li>
+        </ol>
+        <br>
+        <br>
+        <h3>Disposal</h3>
+        <ol>
+            <li>Government chooses a disposal firm for gun disposal and handle the guns</li>
+            <li>Government save changes and commit</li>
+            <li>Disposal firm disposes the guns and requests for status change</li>
+            <li>Government save changes and commit</li>
+        </ol>
+    </aside>
+    <main>
+<div class="container">
+    <h1>Proccess Diagram</h1>
+    <h2>In the Market</h2>
+    <table class="animationTable">
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+                <img src="icons/block1ByLogoMakr.com.png" alt="blockchain image" class="tableIconBG">
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <img src="icons/vendorByLogoMakr.com.png" alt="vendor image" class="tableIcon">
+                <img src="icons/gunUserByLogoMakr.com.png" alt="gun user image" class="tableIcon">
+            </td>
+            <td colspan="3">
+                <img src="icons/gunsSoldByLogoMakr.com.png" alt="gun sold image" class="movingIcon position1" id="reqIcon1">
+            </td>
+            <td>
+                <img src="icons/govByLogoMakr.com.png" alt="government image" class="tableIcon">
+                <img src="icons/multiLangByLogoMakr.com.png" alt="smart contract image" class="tableIcon">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="icons/vendorByLogoMakr.com.png" alt="vendor image" class="tableIcon">
+                <img src="icons/c2cSailByLogoMakr.com.png" alt="c2c image" class="tableIcon">
+            </td>
+            <td colspan="3">
+                <img src="icons/gunsSoldByLogoMakr.com.png" alt="gun sold image" class="movingIcon position1" id="reqIcon2">
+            </td>
+            <td>
+                <img src="icons/govByLogoMakr.com.png" alt="government image" class="tableIcon">
+                <img src="icons/multiLangByLogoMakr.com.png" alt="smart contract image" class="tableIcon">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="icons/gunUserByLogoMakr.com.png" alt="gun user image" class="tableIcon" >
+                <img src="icons/disposalByLogoMakr.com.png" alt="disposal firm image" class="tableIcon" >
+            </td>
+            <td colspan="3">
+                <img src="icons/distGunsSoldByLogoMakr.com.png" alt="gun sold image" class="movingIcon position1" id="reqIcon3">
+            </td>
+            <td>
+                <img src="icons/govByLogoMakr.com.png" alt="government image" class="tableIcon">
+                <img src="icons/multiLangByLogoMakr.com.png" alt="smart contract image" class="tableIcon">
+            </td>
+        </tr>
+        <tr>
+            <td><b>Steps:</b></td>
+            <td id='statusA1' colspan="4"></td>
+        </tr>
+    </table>
+    <hr>
+    <button onclick="userVendorTx()" >Buy a gun</button>
+    <button onclick="c2cSale()">C2C sale</button>
+    <button onclick="return4Disposal()" >Return for disposal</button>
+    <button onclick="resetA1()" >Reset</button>
+<hr>
+<hr>
+    <h2>Guns Disposal</h2>
+    <table class="animationTable">
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+                <img src="icons/block1ByLogoMakr.com.png" alt="blockchain image" class="tableIconBG">
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <img src="icons/govByLogoMakr.com.png" alt="government image" class="tableIcon">
+            </td>
+            <td colspan="3">
+                <img src="icons/toRecByLogoMakr.com.png" alt="to disposal image" class="movingIcon position1" id="reqIcon4">
+            </td>
+            <td>
+                <img src="icons/disposalFirmByLogoMakr.com.png" alt="disposed image" class="tableIcon">
+            </td>
+        </tr>
+        <tr>
+            <td><b>Steps:</b></td>
+            <td id='statusA2' colspan="4"></td>
+        </tr>
+    </table>
+    <hr>
+    <button onclick="govDispose()" >Guns Disposal</button>
+    <button onclick="resetA2()" >Reset</button>
+</div>
+    </main>
+    <footer>
+        All logos by LogoMakr.com. <br>
+        Student project for Majid Shockoohi & Malhar Dave.
+    </footer>
+</body>
+</html>

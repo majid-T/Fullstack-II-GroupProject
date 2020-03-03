@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="styles/CATest.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="scripts/subscrib.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CodexArma</title>
+</head>
+<body>
+	<div class = "navbar">
+		<a href="index.html">Main Page </a>
+		<a href="CodexArmastakeholders.html">Stakeholders</a>
+		<a href="Consensus_Mechanism.html">Consensus Mechanism </a>
+		<a href="Revenue_Streams.html">Revenue Streams </a>
+		<a href="flowchart-processA.html">Process Diagram A</a>
+		<a href="flowchart-processB.html">Process Diagram B</a>
+        <a href="interactive-demo.html">Demo process</a>
+	</div>
+<br>
+<header id="welcomeheader">
+	<h1>Welcome To CodexArma</h1>
+	<!-- <img src="images/Logo.jpg" alt="CodexArma Logo" style="width: 30%; height: 30%; display: block; margin-left: auto; margin-right: auto;"> -->
+</header>
+<div id="mainContainer">
+	<aside>
+		<form class='mar-someClass' action="/api/addEmail" method="post">
+                <fieldset>
+                    <legend>Subscribe to our newsletter</legend>
+                    <input type="email" name="user_email" placeholder="Enter your e-mail" id="emailToAdd" required>
+                    <span id="err_newsLetter"></span>
+                    <div class='mar-someClass2'>
+                    	<input type="checkbox" name="events" value="events">Events
+                    	<input type="checkbox" name="news" value="news">News
+                    	<input type="checkbox" name="other" value="other">Other
+                    </div>
+                    <input type="submit" name="req" id="addEmailBtn">
+                </fieldset>
+            </form>
+
+            <hr>
+            <input type="email" name="emailToCheck" value="" placeholder="Type your email to check" id="emailToCheck">
+            <button id="checkSubButton">Check if I am already subscribed!</button>
+            <div id="editEmailDiv"></div>
+
+	</aside>
+	<main>
+		<div>
+			<h2> What is CodexArma? </h2>
+			CodexArma is a permissioned, closed blockchain that aims to improve firearms accountability.
+			<br>
+			There are two major functions of CodexARMA:
+			<ul>
+				<li> Tracking guns throughout their lifecycle</li>
+				<li>Providing a platform to record B2C and C2C firearm transactions</li>
+			</ul>
+			<h2>Why is it needed?</h2>
+			<p>
+				One of the most pressing matters confounding lawmakers in the United States today is
+				gun violence. In fact, the United States stands out among high-income countries for its
+				abnormally high gun violence rates. Since 2001, firearms have been used to commit between
+				67% and 78% of the total documented homicides each year[1]
+				. The consistent nature of these
+				alarmingly high rates indicates a regular supply of firearms to the criminal class. Considering the
+				stringent laws that govern weapons manufacturing and sales in the country, this should not be the
+				case. How then, do guns fall into the wrong hands?
+			</p>
+			<p>
+				According to a 2017 estimate, nearly 22% of Americans obtained their firearms without a
+				background check[2]. The majority of these transactions were conducted in an informal setting
+				without the involvement of a federally-licensed firearms dealer, such as from a friend, family
+				member, flea market, pawn shop etc. Another problem is the presence of “straw purchasers”,
+				that is, people who buy guns on behalf of other people. In fact, the majority of incarcerated
+				criminals involved in gun violence that responded to a recent survey admitted to obtaining the
+				gun that they used through such channels, thus avoiding scrutiny[3].
+			</p>
+			<p>
+				As for the background checks that occur prior to a legal transaction, they can best be
+				described as superficial. After the buyer fills out a form with the necessary information, the
+				vendor contacts the FBI, where the information of the person is run through the NICS (National
+				Instant Criminal Background Check System) database, and the buyer’s eligibility is verified
+				within the timespan of a commercial break. However, the NICS is not comprehensive. Out of the
+				50 states, only 12 reported having more than 80% of ineligible persons’ data present on the
+				database[4].
+			</p>
+			<p>
+				Furthermore, NICS is far from secure. “....This type of database structure has a low fault
+				tolerance in that it presents a single point of attack for a hacker and a single point for human
+				errors in data entry and management. The imperfect nature of the NICS is even recognized by
+				the FBI, which reports that about 3000 people pass the NICS background check every year, in
+				spite of being prohibited from buying a gun by state or federal law….” mentions Professor
+				Thomas Heston of Washington State University in a 2017 publication[5].
+			</p>
+			From the given data, two potential sources of improvement become apparent:
+			<ul>
+				<li>Implementing a system for tracking the complete lifecycle of a gun.</li>
+				<li> Automating NICS background check system and making background checks more
+				comprehensive.</li>
+			</ul>
+		</div>
+		<div class="footer">
+		<ol>
+			<li><a href="https://ucr.fbi.gov/crime-in-the-u.s/2016/crime-in-the-u.s.-2016/cius-2016" target="_blank">Uniform Crime Reporting, FBI</a></li>
+			<li><a href="https://doi.org/10.7326/M16-1590">Miller M, Hepburn L, Azrael D. Firearm Acquisition Without Background Checks: Results of a National Survey. Ann Intern
+			Med. 2017;166:233–239. [Epub ahead of print 3 January 2017]
+			</a></li>
+			<li><a href="http://www.sciencedirect.com/science/article/pii/S0091743515001486?via=ihub" target="_blank">Cook, Philip J., et al. “Sources of Guns to Dangerous People: What We Learn by Asking Them.” Preventive Medicine,
+			Academic Press, 30 Apr. 2015</a></li>
+			<li><a href="https://lawcenter.giffords.org/gun-laws/policy-areas/background-checks/nics-reporting-procedures/" target="_blank">“NICS & Reporting Procedures.” Giffords Law Center to Prevent Gun Violence</a></li>
+			<li>Heston, Thomas F. “A Blockchain Solution to Gun Control.” PeerJ, 2017, doi:10.7287/peerj.preprints.3407.</li>
+		</ol>
+		</div>
+
+		</main>
+		<footer>
+			All logos by LogoMakr.com. <br>
+			Student project for Majid Shockoohi & Malhar Dave.
+		</footer>
+</div>
+
+</body>
+</html>

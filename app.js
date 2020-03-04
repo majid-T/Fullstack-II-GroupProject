@@ -197,11 +197,12 @@ app.get('/api/getEmail',(req,res)=>{
 
 //end point for editing email
 app.get('/api/editEmail',(req,res)=>{
+  console.log(req.query);
     var userContact = {email:req.query.email};
-    userContact.events = Boolean(req.query.events)
-    userContact.other = Boolean(req.query.other)
-    userContact.news = Boolean(req.query.news)
-    userContact.active = Boolean(req.query.active)
+    userContact.events = req.query.events;
+    userContact.other = req.query.other;
+    userContact.news = req.query.news;
+    userContact.active = req.query.active;
     console.log(userContact);
     dao.editItem({email:`${req.query.email}`},userContact,'emails');
 });

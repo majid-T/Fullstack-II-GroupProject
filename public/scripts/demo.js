@@ -41,19 +41,19 @@ $( document ).ready(function (){
             govTable.append(`<td class="gunTd">${gun.manufact}</td>`);
             govTable.append(`<td class="gunTd">${gun.regNo}</td>`);
             govTable.append(`<td class="gunTd">${gun.specA}</td>`);
-               govTable.append(`<td class="gunTd">${gun.specB}</td>`);
+            govTable.append(`<td class="gunTd">${gun.specB}</td>`);
             govTable.append(`<td class="gunTd">${gun.built}</td>`);
             if(gunStatus % 2 === 0 ){
                 if(gunStatus === 8 ){
                      govTable.append(makeButton(gun,gunStatus,'Send for disposal'));
                 }else if(gunStatus===10) {
-                      govTable.append(`<td class="gunTd">${statusList[gunStatus]}</td>`);
+                      govTable.append(`<td class="stage${gunStatus}">${statusList[gunStatus]}</td>`);
                 }else{
                     govTable.append(makeButton(gun,gunStatus,'Commit'));
                 }
             }
             else{
-                govTable.append(`<td class="gunTd">${statusList[gunStatus]}</td>`);
+                govTable.append(`<td class="stage${gunStatus}">${statusList[gunStatus]}</td>`);
             }
             // govTable.append("</tr>");
 

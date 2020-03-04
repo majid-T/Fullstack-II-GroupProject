@@ -1,6 +1,6 @@
 $( document ).ready(function (){
     var serachBtn = $("#searchBtn");
-    var reviewOnOrderList = $("#allReviews");
+    var reviewUnOrderList = $("#allReviews");
     var serachTxt = $("#searchQTxt");
     var reviewList = [];
     var keywords =[];
@@ -10,7 +10,13 @@ $( document ).ready(function (){
         if(data){
             for (item of data){
                 keywords.push(item);
-                popKeysDiv.append(`<label class="keywordLabel">${item.word}</label>`);
+                var label = document.createElement('label');
+                label.innerText = item.word;
+                label.classList.add('keywordLabel');
+                label.addEventListener('click',(e)=>{
+                    searchReviewsByParam(e.target.innerText);
+                    });
+                popKeysDiv.append(label);
             }
         }else{
             console.log('No keywords!');
@@ -23,44 +29,39 @@ $( document ).ready(function (){
                 if(data){
                     for(item of data){
 
-                        reviewOnOrderList.append(`<li id=${item._id}>${item.author}:${item.review} - ${item.datePosted}</li>`);
+                        reviewUnOrderList.append(`<li class="revClass" id=${item._id}>${item.author}:${item.datePosted}<br><hr>&nbsp;&nbsp; &quot;${item.review}&quot;</li><br>`);
                         reviewList.push({review: item.review, id:item._id});
                     }
                 }else{
                     console.log('No data!');
                 }
-                console.log(reviewList);
             });
 
-    function getReviewsForSearch(searchQ){
-        serachQuery = serachTxt.val();
+    function searchReviews(){
+
+        var searchQuery = serachTxt.val().toLowerCase();
         for(item of reviewList){
-            if (item.review.includes(serachQuery)){
+            var modifiedRev = item.review.toLowerCase();
+            if (modifiedRev.includes(searchQuery)){
                 $(`#${item.id}`).show();
             }else{
                 $(`#${item.id}`).hide();
             }
         }
-
-        //Get all reviews
-        // var i,searchMatch,txtValue;
-        // for(i=0;i<reviewList.length;i++){
-        //     searchMatch=reviewList[i];
-        //     txtValue=searchMatch.textArea || searchMatch.innerText;
-        //     if(txtValue>-1){
-        //         searchMatch[i].style.display="";
-        //     }else{
-        //       searchMatch[i].style.display="none";
-        //     }
-        // }
-
     }
 
-    function click(){
-        alert('clicked!');
-    }
-    serachBtn.on('click',getReviewsForSearch);
-    popKeysDiv.on('click',click);
+     function searchReviewsByParam(searchKey){
+            for(item of reviewList){
+                var modifiedRev = item.review.toLowerCase();
+                if (modifiedRev.includes(searchKey.toLowerCase())){
+                    $(`#${item.id}`).show();
+                }else{
+                    $(`#${item.id}`).hide();
+                }
+            }
+        }
+    serachBtn.on('click',searchReviews);
+    // popKeysDiv.on('click',click);
 
 });
 

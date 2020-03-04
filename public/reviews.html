@@ -25,13 +25,17 @@
     </div>
     <div id="mainContainer">
         <aside>
-            <form action='api/addReview' method='post'>
-                <label for='add-review'>Add review
-                    <input class='myLabels' type="textArea" id="reviewContent" placeholder="Enter your review" name="review" minlength="1" maxlength="400" required>
-                </label>
-                <input class="authorInput" type="text" name="author" id="authorId" placeholder="your name" required>
-                <input type="submit" name="submit">
-            </form>
+            <div class="review_container">
+                <form action='api/addReview' method='post'>
+                    <fieldset>
+                        <legend>Add Your Review</legend>
+                        <input class='reviewTxtArea' type="textArea" id="reviewContent" placeholder="Enter your review" name="review" minlength="1" maxlength="400" required>
+
+                        <input class="authorInput" type="text" name="author" id="authorId" placeholder="your name" required>
+                        <input type="submit" name="submit">
+                    </fieldset>
+                </form>
+            </div>
         </aside>
         <main>
             <hr><hr>

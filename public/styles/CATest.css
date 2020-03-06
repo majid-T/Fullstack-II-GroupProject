@@ -2,6 +2,9 @@ body {
 	background-image: linear-gradient(to right, rgba(0,62,83,0),rgba(0,62,83,1));
 }
 
+p {
+  text-align: justify;
+}
 .stakTableImg{
 	width: 70%;
 }
@@ -131,6 +134,17 @@ footer{
     margin: 2px;
 }
 
+.interactiveDemo{
+    width: 90%;
+    margin-left: 5%;
+    background-color: #d9e2eb;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+#welcomeheader{
+      text-align: center;
+}
 .stage1, .stage3{
     background-color: yellow;
     text-align: center;

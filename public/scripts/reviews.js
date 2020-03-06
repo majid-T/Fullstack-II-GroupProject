@@ -5,13 +5,16 @@ $( document ).ready(function (){
     var reviewList = [];
     var keywords =[];
     var popKeysDiv = $("#popKeys");
+    var userSearches = [];
 
      $.get("./api/getKeywords").done(function (data){
         if(data){
             for (item of data){
                 keywords.push(item);
+            }
+            for(i=0;i<keywords.length;i++){
                 var label = document.createElement('label');
-                label.innerText = item.word;
+                label.innerText = keywords[i].word;
                 label.classList.add('keywordLabel');
                 label.addEventListener('click',(e)=>{
                     searchReviewsByParam(e.target.innerText);
@@ -21,11 +24,9 @@ $( document ).ready(function (){
         }else{
             console.log('No keywords!');
         }
-        console.log(keywords);
      });
 
      $.get("./api/getReviews").done(function(data){
-
                 if(data){
                     for(item of data){
 
@@ -40,6 +41,17 @@ $( document ).ready(function (){
     function searchReviews(){
 
         var searchQuery = serachTxt.val().toLowerCase();
+        if(!userSearches.includes(searchQuery)){
+            userSearches.push(searchQuery);
+            var keyCount =0;
+            for (item of keywords){
+                if(item.word == searchQuery){
+                    keyCount = parseInt(item.count)+1;
+                }
+            }
+            $.get(`./api/addKeyword?keyWord=${searchQuery}&keywordCount=${keyCount}`);
+        }
+
         for(item of reviewList){
             var modifiedRev = item.review.toLowerCase();
             if (modifiedRev.includes(searchQuery)){
@@ -51,13 +63,26 @@ $( document ).ready(function (){
     }
 
      function searchReviewsByParam(searchKey){
+        var searchQuery = searchKey.toLowerCase();
+
+        if(!userSearches.includes(searchQuery)){
+            userSearches.push(searchQuery);
+            var keyCount =0;
+            for (item of keywords){
+                if(item.word == searchQuery){
+                    keyCount = parseInt(item.count)+1;
+                }
+            }
+            $.get(`./api/addKeyword?keyWord=${searchQuery}&keywordCount=${keyCount}`);
+        }
+
             for(item of reviewList){
                 var modifiedRev = item.review.toLowerCase();
-                if (modifiedRev.includes(searchKey.toLowerCase())){
-                    $(`#${item.id}`).show();
-                }else{
-                    $(`#${item.id}`).hide();
-                }
+                    if (modifiedRev.includes(searchKey.toLowerCase())){
+                        $(`#${item.id}`).show();
+                    }else{
+                        $(`#${item.id}`).hide();
+                    }
             }
         }
     serachBtn.on('click',searchReviews);

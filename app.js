@@ -13,20 +13,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-function validate(inputTxt){
-  var letters = '[A-Za-z0-9]+';
-  if(inputtxt.value.match(letters))
-  { return true; }
-  else
-  { return false; }
-}
 app.get('/',(req,res)=>{
     res.redirect('public/index.html');
 });
 
 // End point for registering guns
 app.post('/api/gunReg',(req,res)=>{
-  // (validate(req.body.gunRegNo) ? console.log('valid') : console.log('notValid'));
     var gun = {
       manufact: req.body.manf,
       regNo:req.body.gunRegNo,
@@ -65,7 +57,7 @@ app.get('/api/editGun',(req,res)=>{
 
 // --- mariam endpoints --
 
-// --- Aditi endpoints ---
+// --- Aditi & Malhar endpoints ---
 app.get('/api/getReviews',(req,res)=>{
     function getAllReviews(err, data) {
         if (data) {
@@ -91,21 +83,16 @@ app.get('/api/getKeywords',(req,res)=>{
 });
 
 app.get('/api/addKeyword',(req,res)=>{
-  // function getAllReviews(err, data) {
-  //         if (data) {
-  //             res.json(data);
-  //         } else {
-  //             console.log(err);
-  //             next(err);
-  //         };
-  //   }
-  // dao.readItem(getAllReviews,'reviews');
-  //   var allKeyword = dao.
-  //   var keyword = req.query.keyword;
-  //   var count = parseInt(req.query.count);
-  //   console.log(keyword + ' ' + count);
-    // dao.editItem({regNo:`${req.query.regNo}`},{status:action},'guns');
-    // res.redirect('../interactive-demo.html');
+   var userKey = req.query.keyWord;
+   var keywordCount = req.query.keywordCount;
+   if(keywordCount!=0){
+      console.log(`userKey: ${userKey} - count: ${keywordCount}`);
+      dao.editItem({word:`${userKey}`},{count:keywordCount},'keywords');
+   }else{
+      console.log("Keyword is 0");
+       dao.writeItem({word:`${userKey}`,count:'1'},'keywords');
+   }
+   res.send('ok');
 });
 
 // --- End Aditi endpoints
